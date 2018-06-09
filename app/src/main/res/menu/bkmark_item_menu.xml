@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bkmark_delete"
+        android:orderInCategory="100"
+        android:title="Delete"
+        />
+    <item
+        android:id="@+id/bkmark_route_detail"
+        android:orderInCategory="101"
+        android:title="Route Detail"
+         />
+    <item
+        android:id="@+id/bkmark_time_table"
+        android:orderInCategory="102"
+        android:title="Time Table"
+        />
+
+    <item
+        android:id="@+id/bkmark_edit"
+        android:orderInCategory="103"
+        android:title="Edit Bookmark"
+        />
+    <item
+        android:id="@+id/bkmark_moveup"
+        android:orderInCategory="113"
+        android:title="Move Up"
+        />
+    <item
+        android:id="@+id/bkmark_movedown"
+        android:orderInCategory="114"
+        android:title="Move Down"
+        />
+</menu>

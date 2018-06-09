@@ -1,0 +1,126 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.better.better1933.BookmarkEditFragment"
+    android:orientation="vertical">
+	<Space
+		android:layout_width="match_parent"
+		android:layout_height="10dp" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:weightSum="2">
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight=".8"
+			android:textSize="18sp"
+			android:textAlignment="textEnd"
+			android:text="路線:  " />
+
+		<TextView
+			android:id = "@+id/route"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.2"
+			android:textSize="20sp"
+			android:text="1234"
+			android:maxLines="1"/>
+	</LinearLayout>
+
+	<Space
+		android:layout_width="match_parent"
+		android:layout_height="10dp" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:weightSum="2">
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight=".8"
+			android:textSize="18sp"
+			android:textAlignment="textEnd"
+			android:text="方向:  " />
+
+		<TextView
+			android:id = "@+id/bound"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.2"
+			android:textSize="20sp"
+			android:text="尖沙咀東"
+			android:maxLines="1"/>
+	</LinearLayout>
+
+	<Space
+		android:layout_width="match_parent"
+		android:layout_height="10dp" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:weightSum="2">
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight=".8"
+			android:textSize="18sp"
+			android:textAlignment="textEnd"
+			android:text="站名:  " />
+
+		<TextView
+			android:id = "@+id/stop"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1.2"
+			android:textSize="20sp"
+			android:text="Poly"
+			android:maxLines="1"/>
+	</LinearLayout>
+
+	<Space
+		android:layout_width="match_parent"
+		android:layout_height="20dp" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:weightSum="2">
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight=".8"
+			android:textSize="25sp"
+			android:textAlignment="textEnd"
+			android:text="Alarm:  "
+			android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+		<EditText
+			android:id="@+id/alarm_min"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight=".8"
+			android:ems="10"
+			android:inputType="number"
+			android:hint="minutes"/>
+
+	</LinearLayout>
+	<Switch
+		android:id="@+id/notify_switch"
+		android:layout_width="wrap_content"
+		android:layout_height="50dp"
+		android:layout_gravity="center"
+		android:textAppearance="@style/TextAppearance.AppCompat.Large"
+		android:textSize="25sp"
+		android:text="Notification          " />
+
+</LinearLayout>

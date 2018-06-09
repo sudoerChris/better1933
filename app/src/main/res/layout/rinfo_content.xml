@@ -1,0 +1,285 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.better.better1933.RouteInfoFragment">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="@android:color/darker_gray"
+            android:showDividers="beginning|middle|end"
+            android:dividerHeight="1dip">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:text="一至五"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="頭班車  "
+                        android:textAlignment="textEnd"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="尾班車  "
+                        android:textAlignment="textEnd"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rinfo_mf_first"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0600"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/rinfo_mf_last"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2300"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="7"
+                android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="星期六"
+                android:textSize="20sp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="頭班車  "
+                    android:textSize="18sp"
+                    android:textAlignment="textEnd"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="尾班車  "
+                    android:textSize="18sp"
+                    android:textAlignment="textEnd" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/rinfo_sat_first"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0600"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/rinfo_sat_last"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2300"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="7"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="公眾假期"
+                android:textSize="20sp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="頭班車  "
+                    android:textSize="18sp"
+                    android:textAlignment="textEnd"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="尾班車  "
+                    android:textSize="18sp"
+                    android:textAlignment="textEnd" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/rinfo_hd_first"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0600"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/rinfo_hd_last"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2300"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rinfo_mf_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:id="@+id/rinfo_mf_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:text="一至五"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <ListView
+                    android:id="@+id/rinfo_mf_frequecy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:showDividers="beginning|middle|end" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rinfo_s_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7"
+                android:showDividers="middle">
+
+                <TextView
+
+                    android:id="@+id/rinfo_s_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:text="星期六"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <ListView
+                    android:id="@+id/rinfo_s_frequecy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:showDividers="beginning|middle|end"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/rinfo_h_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="7"
+                android:showDividers="beginning">
+
+            <TextView
+                android:id="@+id/rinfo_h_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="公眾假期"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <ListView
+                android:id="@+id/rinfo_h_frequecy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:showDividers="beginning|middle|end"/>
+        </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/rinfo_special_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Special Node"
+                android:textSize="18sp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+</ScrollView>
+

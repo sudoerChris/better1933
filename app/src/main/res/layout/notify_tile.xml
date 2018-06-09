@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+	android:baselineAligned="false">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/left_row_route"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:maxLines="1"
+			android:textAlignment="center"
+			android:textSize="25sp"
+			android:minWidth="50dp"/>
+
+		<LinearLayout
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight=".55"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="To" />
+
+				<TextView
+					android:id="@+id/left_row_bound"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:maxLines="1"
+					android:textSize="20sp" />
+			</LinearLayout>
+
+			<TextView
+				android:id="@+id/left_row_stop"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:maxLines="1"
+				android:textAlignment="viewStart"
+				android:textSize="15sp" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end"
+			android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/left_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="end|center_vertical"
+					android:maxLines="1"
+					android:textAlignment="center"
+					android:textSize="23sp"
+					/>
+
+
+			<TextView
+				android:id="@+id/left_rawTime"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="bottom|center_horizontal"
+				android:maxLines="1"
+				android:textAlignment="center"
+				android:textSize="12sp" />
+
+		</LinearLayout>
+
+	</LinearLayout>
+	
+	<!--right tile-->
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/right_layout"
+	android:layout_width="0dp"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:layout_weight="1"
+		android:visibility="invisible">
+
+		<TextView
+			android:id="@+id/right_row_route"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:maxLines="1"
+			android:textAlignment="center"
+			android:textSize="25sp"
+			android:minWidth="50dp"/>
+
+	<LinearLayout
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight=".55"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="To" />
+
+			<TextView
+				android:id="@+id/right_row_bound"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:textSize="20sp"
+				android:maxLines="1"/>
+		</LinearLayout>
+
+		<TextView
+			android:id="@+id/right_row_stop"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAlignment="viewStart"
+			android:textSize="15sp"
+			android:maxLines="1"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="end"
+		android:orientation="vertical">
+
+
+			<TextView
+				android:id="@+id/right_time"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="end|center_vertical"
+				android:textAlignment="center"
+				android:textSize="23sp"
+				android:maxLines="1"/>
+
+
+		<TextView
+			android:id="@+id/right_rawTime"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|center_horizontal"
+			android:textAlignment="center"
+			android:textSize="12sp"
+			android:maxLines="1" />
+
+	</LinearLayout>
+
+</LinearLayout>
+
+</LinearLayout>

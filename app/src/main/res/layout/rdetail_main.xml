@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.better.better1933.RouteDetailFragment">
+
+
+
+    <include layout="@layout/rdetail_content"
+        android:id="@+id/include" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/rdetail_refresh_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="104dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:fabSize="auto"
+        app:srcCompat="@drawable/ic_refresh"
+        app:backgroundTint="@color/colorTransparent"
+        app:elevation="0dp" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/rdetail_restart_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:fabSize="auto"
+        app:srcCompat="@drawable/ic_restart"
+        app:backgroundTint="@color/colorTransparent"
+        app:elevation="0dp"
+        android:visibility="gone"/>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/rdetail_info_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="168dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:fabSize="auto"
+        app:srcCompat="@drawable/ic_info"
+
+        app:backgroundTint="@color/colorTransparent"
+        app:elevation="0dp"/>
+
+</android.support.design.widget.CoordinatorLayout>

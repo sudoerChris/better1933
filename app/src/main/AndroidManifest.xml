@@ -23,8 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-	    <service android:name=".NotifyService" />
-	    <service android:name=".AlarmService" />
+	    <service android:name=".Service.NotifyService" />
+	    <service android:name=".Service.AlarmService" />
+        <receiver android:name=".Service.NotificationActionReceiver"
+            android:exported="false">
+            <intent-filter android:label="Close" android:priority="0">
+                <action android:name="Close" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

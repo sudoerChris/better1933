@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.better.better1933.SettingFragment"
+    tools:context="com.example.better.better1933.Controller.SettingFragment"
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
@@ -16,11 +16,17 @@
             android:text="Clear Bookmark"
             android:layout_marginTop="10dp"/>
 
-        <Button
-            android:id="@+id/setting_reset_db"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Update Database"
-            android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/setting_update_KMB_db"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update KMB Database"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/setting_reset_KMB_db"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset KMB Database"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

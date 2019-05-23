@@ -2,7 +2,6 @@ package com.example.better.better1933;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -19,15 +18,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.concurrent.ThreadPoolExecutor;
+import com.example.better.better1933.Controller.AboutFragment;
+import com.example.better.better1933.Controller.RouteSearchFragment;
+import com.example.better.better1933.Controller.SettingFragment;
+import com.example.better.better1933.Controller.ViewBookmarkFragment;
+import com.example.better.better1933.Service.NotifyService;
 
-//update Url:
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+
+//onKMBEtaReaderUpdate Url:
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    Context context;
+   public Context context;
 	private TextView statusBarTextView;
 	public Intent notifyServiceIntent;
-	void writeStatus(String status, boolean stay){
+	public Executor EtaUpdateThreadPool;
+	public void writeStatus(String status, boolean stay){
         statusBarTextView.setText(status);
         statusBarTextView.setVisibility(TextView.VISIBLE);
         if (!stay) {
@@ -40,18 +48,17 @@ public class MainActivity extends AppCompatActivity
             }, 1000);
         }
     }
-    void statusGone(){
+    public void statusGone(){
         statusBarTextView.setVisibility(TextView.GONE);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ((ThreadPoolExecutor) AsyncTask.THREAD_POOL_EXECUTOR).setCorePoolSize(15);
-        ((ThreadPoolExecutor) AsyncTask.THREAD_POOL_EXECUTOR).setMaximumPoolSize(100);
-        Log.d("MainActivity", "onCreate");
+        EtaUpdateThreadPool = Executors.newFixedThreadPool(4);
         super.onCreate(savedInstanceState);
         context = getApplicationContext();
+        GlobalConst.Init(context);
         setContentView(R.layout.main_nev);
-	    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+	    Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,24 +66,24 @@ public class MainActivity extends AppCompatActivity
                 Log.d("setNavList",v.toString());
             }
         });
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        statusBarTextView = (TextView) findViewById(R.id.app_status);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        statusBarTextView = findViewById(R.id.app_status);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         Fragment fragment = new ViewBookmarkFragment();
         getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.content_frame, fragment, ViewBookmarkFragment.fragmentId).commit();
-        
         //start background service
 	    notifyServiceIntent = new Intent(this, NotifyService.class);
 	    startService(notifyServiceIntent);
     }
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+				Log.d("MainActivity","onBackPressed");
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -128,7 +135,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -162,7 +168,7 @@ public class MainActivity extends AppCompatActivity
         if (fragment != null) {
 	        getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.content_frame, fragment, fragmentTag).commit();
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -170,4 +176,6 @@ public class MainActivity extends AppCompatActivity
         super.onDestroy();
         //stopService(notifyServiceIntent);
     }
+
+
 }

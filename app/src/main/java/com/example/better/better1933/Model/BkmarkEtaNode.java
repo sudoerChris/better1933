@@ -1,10 +1,10 @@
 package com.example.better.better1933.Model;
 
-import com.example.better.better1933.Infrastructure.EtaJsonReader;
+import com.example.better.better1933.Infrastructure.KMB.KMBEtaReader;
 
 public class BkmarkEtaNode extends DBStopInfoNode {
     public boolean isShowMore = false;
-    public EtaJsonReader etaJsonReader = null;
+    public KMBEtaReader KMBEtaReader = null;
     public String[] time = new String[]{"--"},rawTime = new String[]{"--:--"};
     public BkmarkEtaNode(String route, int bound_seq, int stop_seq, String serviceType) {
         super(route, bound_seq, stop_seq, serviceType);

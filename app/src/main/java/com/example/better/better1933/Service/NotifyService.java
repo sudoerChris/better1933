@@ -38,8 +38,8 @@ public class NotifyService extends Service implements KMBEtaReader.IKMBEtaReader
 	private RemoteViews[] notificationViews;
 	private AutoUpdateTimer autoUpdateTimer;
 	public Executor EtaUpdateThreadPool;
-	private NotificationManagerCompat  notificationManager;
-
+	private NotificationManagerCompat notificationManager;
+	private Notification[] notifications;
 	private Notification createNotification(RemoteViews view, boolean closeButton){
 		Intent intent = new Intent(this, MainActivity.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY);
@@ -71,6 +71,7 @@ public class NotifyService extends Service implements KMBEtaReader.IKMBEtaReader
 	}
 	@Override
 	public void onCreate(){
+		Log.d("NotifyService","onCreate");
 		GlobalConst.Init(getApplicationContext());
 		notificationManager = NotificationManagerCompat.from(this);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -92,7 +93,7 @@ public class NotifyService extends Service implements KMBEtaReader.IKMBEtaReader
 			iLimit = (notifyList.length - 1) / 2;
 		}
 		notificationViews = new RemoteViews[iLimit + 1];
-
+		notifications = new Notification[iLimit + 1];
 		for (int i = iLimit; i >= 0; i--) {
 			notificationViews[i] = new RemoteViews(
 					getApplicationContext().getPackageName(),
@@ -108,8 +109,9 @@ public class NotifyService extends Service implements KMBEtaReader.IKMBEtaReader
 				notificationViews[i].setTextViewText(R.id.right_row_bound, notifyList[i * 2+1].bound);
 				notificationViews[i].setTextViewText(R.id.right_row_stop, notifyList[i * 2+1].stop);
 			}
+			notifications[i] = createNotification(notificationViews[i],i==iLimit);
 				if(notificationManager!=null) {
-					notificationManager.notify(i+1, createNotification(notificationViews[i],i==iLimit));
+					notificationManager.notify(i+1, notifications[i]);
 				}
 //			}
 		}
@@ -120,6 +122,7 @@ public class NotifyService extends Service implements KMBEtaReader.IKMBEtaReader
 		autoUpdateTimer.executeOnExecutor(Executors.newSingleThreadExecutor());
 	}
 	public void onKMBEtaReaderUpdate(int id, String[] time, String[] rawTime){
+		Log.d("NotifyService","onKMBEtaReaderUpdate");
 		boolean alarm = id>=notifyList.length;
 		int targetNotify;
 		if (alarm) {
@@ -139,29 +142,33 @@ public class NotifyService extends Service implements KMBEtaReader.IKMBEtaReader
 			}
 		}
 		if(notificationManager!=null) {
-			notificationManager.notify(targetNotify + 1, createNotification(notificationViews[targetNotify],id>notifyList.length-2));
+			notificationManager.notify(targetNotify + 1, notifications[targetNotify]);
 		}
 	}
-
 	@Override
 	public void onAutoUpdateTimerTick() {
+		Log.d("NotifyService","onAutoUpdateTimerTick");
+
 		for(int i = 0; i<notifyList.length;i++){
 			if(notifyList[i].KMBEtaReader !=null && !notifyList[i].KMBEtaReader.isCancelled()){
 				notifyList[i].KMBEtaReader.cancel(true);
 			}
-			notifyList[i].KMBEtaReader = new KMBEtaReader(notifyList[i],i,NotifyService.this);
-			notifyList[i].KMBEtaReader.executeOnExecutor(EtaUpdateThreadPool);
+				notifyList[i].KMBEtaReader = new KMBEtaReader(notifyList[i], i, NotifyService.this);
+				notifyList[i].KMBEtaReader.executeOnExecutor(EtaUpdateThreadPool);
+
 		}
 	}
 
 	@Override
 	public void onAutoUpdateTimerPostExecute() {
 		//restart timer
+		Log.d("NotifyService","onAutoUpdateTimerPostExecute");
 		if(autoUpdateTimer!=null) {
 			autoUpdateTimer.cancel(true);
 		}
-		autoUpdateTimer = new AutoUpdateTimer(this,10000,true);
-		autoUpdateTimer.executeOnExecutor(Executors.newSingleThreadExecutor());
+			autoUpdateTimer = new AutoUpdateTimer(this, 10000, true);
+			autoUpdateTimer.executeOnExecutor(Executors.newSingleThreadExecutor());
+
 	}
 
 	@Override
@@ -170,15 +177,16 @@ public class NotifyService extends Service implements KMBEtaReader.IKMBEtaReader
 	}
 	@Override
 	public void onDestroy (){
+		stopForeground(true);
+		stopSelf();
 		super.onDestroy();
+		autoUpdateTimer.cancel(true);
 		for(BkmarkEtaNode node: notifyList){
 			if(node.KMBEtaReader !=null){
 				node.KMBEtaReader.cancel(true);
 			}
 		}
 		notificationManager.cancelAll();
-		stopForeground(true);
 		Log.d("NotifyService","Destroy");
 	}
-
 }

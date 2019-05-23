@@ -16,7 +16,6 @@ public class NotificationActionReceiver extends BroadcastReceiver {
         if(intent.getAction().equals("close")) {
             //NotifyService.this.stopSelf();
             context.stopService(new Intent(context, NotifyService.class));
-
         }
     }
 }

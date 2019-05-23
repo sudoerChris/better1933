@@ -12,11 +12,11 @@ android {
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.example.better.better1933"
-        minSdkVersion 26
+        minSdkVersion 24
         //noinspection OldTargetApi
-        targetSdkVersion 26
-        versionCode 9
-        versionName "2.1.0"
+        targetSdkVersion 28
+        versionCode 10
+        versionName "2.1.1"
         setProperty("archivesBaseName", "better1933-$versionName")
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

@@ -180,7 +180,9 @@ public class NotifyService extends Service implements KMBEtaReader.IKMBEtaReader
 		stopForeground(true);
 		stopSelf();
 		super.onDestroy();
-		autoUpdateTimer.cancel(true);
+		if(autoUpdateTimer!=null) {
+			autoUpdateTimer.cancel(true);
+		}
 		for(BkmarkEtaNode node: notifyList){
 			if(node.KMBEtaReader !=null){
 				node.KMBEtaReader.cancel(true);

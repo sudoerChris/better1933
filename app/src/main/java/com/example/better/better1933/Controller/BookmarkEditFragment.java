@@ -6,7 +6,6 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +32,6 @@ public class BookmarkEditFragment extends DialogFragment {
         return newFragment;
     }
     @Override
-    @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         TextView route, bound, stop;
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

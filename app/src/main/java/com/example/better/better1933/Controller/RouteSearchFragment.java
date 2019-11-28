@@ -175,7 +175,7 @@ public class RouteSearchFragment extends Fragment {
 
 	@Override
 	public void onStop() {
-		((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+		((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getView().getRootView().getWindowToken(), 0);
 		super.onStop();
 	}
 

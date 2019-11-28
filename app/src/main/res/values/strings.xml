@@ -12,8 +12,11 @@
     <string name="bookmark_stop_bound_seq_preset">bookmark_stop_bound_seq_</string>
     <string name="bookmark_stop_servicetype_preset">bookmark_stop_servicetype_</string>
     <string name="bookmark_stop_seq_preset">bookmark_stop_seq_</string>
-	<!--<string name="RouteSearchTitle">索敵開始</string>-->
-	<string name="RouteSearchTitle">路線搜尋</string>
+    <!--<string name="RouteSearchTitle">索敵開始</string>-->
+    <string name="RouteSearchTitle">路線搜尋</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

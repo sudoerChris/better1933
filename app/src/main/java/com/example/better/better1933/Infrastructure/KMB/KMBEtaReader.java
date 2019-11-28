@@ -91,7 +91,7 @@ public class KMBEtaReader extends AsyncTask<Void, String[], Void> {
 		String[] time = new String[3];
 		String[] rawTime = new String[3];
 		for (int i = 0; i < 3; i++) {
-			if (i >= resultTime[0].length) {
+			if (i >= resultTime[0].length || resultTime[0][i].length()==0) {
 				time[i] = "--";
 				rawTime[i] = "--:--";
 				continue;

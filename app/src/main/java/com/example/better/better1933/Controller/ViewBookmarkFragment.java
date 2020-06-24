@@ -3,11 +3,6 @@ package com.example.better.better1933.Controller;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -19,12 +14,19 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 import com.example.better.better1933.Infrastructure.*;
 import com.example.better.better1933.Infrastructure.KMB.KMBEtaReader;
 import com.example.better.better1933.MainActivity;
 import com.example.better.better1933.Model.*;
 import com.example.better.better1933.R;
 import com.example.better.better1933.Service.NotifyService;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -105,7 +107,7 @@ public class ViewBookmarkFragment extends Fragment implements KMBEtaReader.IKMBE
 			if (bookmarkListViewAdapter.getItem(i).KMBEtaReader != null) {
 				bookmarkListViewAdapter.getItem(i).KMBEtaReader.cancel(true);
 			}
-			bookmarkListViewAdapter.getItem(i).KMBEtaReader = new KMBEtaReader(bookmarkListViewAdapter.getItem(i), i, this);
+			bookmarkListViewAdapter.getItem(i).KMBEtaReader = new KMBEtaReader(bookmarkListViewAdapter.getItem(i), i, this,getContext());
 
 			View rowView = bookmarkListView.getChildAt(i);
 			if (rowView != null) {
@@ -219,7 +221,6 @@ public class ViewBookmarkFragment extends Fragment implements KMBEtaReader.IKMBE
 				Fragment fragment = new ViewBookmarkFragment();
 				FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 				fragmentManager.beginTransaction().replace(R.id.content_frame, fragment, "ViewBookmarkFragment").commit();
-				
 			}
 		});
 		

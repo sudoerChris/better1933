@@ -1,11 +1,6 @@
 package com.example.better.better1933.Controller;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +11,17 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 import com.example.better.better1933.Infrastructure.KMB.KMBEtaReader;
 import com.example.better.better1933.Infrastructure.KMB.KMBDB;
 import com.example.better.better1933.MainActivity;
 import com.example.better.better1933.Model.*;
 import com.example.better.better1933.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class RouteDetailFragment extends Fragment implements KMBEtaReader.IKMBEtaReaderUpdate {
 	final static String fragmentId = "RouteDetailFragment";
@@ -43,7 +44,7 @@ public class RouteDetailFragment extends Fragment implements KMBEtaReader.IKMBEt
 
 				node.KMBEtaReader.cancel(true);
 			}
-			node.KMBEtaReader = new KMBEtaReader(stopListViewAdapter.getItem(i), i, this);
+			node.KMBEtaReader = new KMBEtaReader(stopListViewAdapter.getItem(i), i, this,getContext());
 			View rowView = stopListView.getChildAt(i);
 			if (rowView != null) {
 				((TextView) rowView.findViewById(R.id.rdetail_row_time)).setText("--");

@@ -5,13 +5,11 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
@@ -153,7 +151,7 @@ public class NotifyService extends Service implements KMBEtaReader.IKMBEtaReader
 			if(notifyList[i].KMBEtaReader !=null && !notifyList[i].KMBEtaReader.isCancelled()){
 				notifyList[i].KMBEtaReader.cancel(true);
 			}
-				notifyList[i].KMBEtaReader = new KMBEtaReader(notifyList[i], i, NotifyService.this);
+				notifyList[i].KMBEtaReader = new KMBEtaReader(notifyList[i], i, NotifyService.this,getApplicationContext());
 				notifyList[i].KMBEtaReader.executeOnExecutor(EtaUpdateThreadPool);
 
 		}

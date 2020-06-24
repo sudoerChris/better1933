@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Bus ETA</string>
     <string name="action_settings">Settings</string>
-    <!--<string name="title_home_activity">試制1933号対大型載具電探改二</string>-->
-    <string name="title_home_activity">巴士到站時間預報</string>
+    <string name="title_home_activity">試制1933号対大型載具電探改二</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -12,11 +11,5 @@
     <string name="bookmark_stop_bound_seq_preset">bookmark_stop_bound_seq_</string>
     <string name="bookmark_stop_servicetype_preset">bookmark_stop_servicetype_</string>
     <string name="bookmark_stop_seq_preset">bookmark_stop_seq_</string>
-    <!--<string name="RouteSearchTitle">索敵開始</string>-->
-    <string name="RouteSearchTitle">路線搜尋</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
+    <string name="RouteSearchTitle">索敵開始</string>
 </resources>

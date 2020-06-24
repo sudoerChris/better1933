@@ -2,12 +2,13 @@ package com.example.better.better1933.Controller;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.example.better.better1933.GlobalConst;
 import com.example.better.better1933.Infrastructure.KMB.KMBDBAutoUpdate;
@@ -66,7 +67,7 @@ public class SettingFragment extends Fragment implements KMBDBAutoUpdate.ResultU
 					kmbdbAutoUpdate.cancel(true);
 				}
 				DBValue lastUpdate = LocalDataDB.GetDBValue(GlobalConst.DBValueName.LastUpdate);
-				kmbdbAutoUpdate = new KMBDBAutoUpdate(SettingFragment.this, (Date) (lastUpdate == null ? null : lastUpdate.GetValue()));
+				kmbdbAutoUpdate = new KMBDBAutoUpdate(SettingFragment.this, (Date) (lastUpdate == null ? "20200616210000" : lastUpdate.GetValue()));
 				if (getActivity() != null) {
 					((MainActivity) getActivity()).writeStatus("下載中", true);
 				}

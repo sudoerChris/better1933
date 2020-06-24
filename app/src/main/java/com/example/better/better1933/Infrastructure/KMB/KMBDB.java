@@ -3,8 +3,9 @@ package com.example.better.better1933.Infrastructure.KMB;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteCantOpenDatabaseException;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.NonNull;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import com.example.better.better1933.GlobalConst;
 import com.example.better.better1933.Model.*;

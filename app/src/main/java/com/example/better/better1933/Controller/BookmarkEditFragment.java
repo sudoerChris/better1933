@@ -6,12 +6,13 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.better.better1933.Infrastructure.LocalDataDB;
 import com.example.better.better1933.MainActivity;

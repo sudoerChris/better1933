@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,7 +11,7 @@
     <include layout="@layout/rdetail_content"
         android:id="@+id/include" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/rdetail_refresh_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/ic_refresh"
         app:backgroundTint="@color/colorTransparent"
         app:elevation="0dp" />
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/rdetail_restart_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         app:backgroundTint="@color/colorTransparent"
         app:elevation="0dp"
         android:visibility="gone"/>
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/rdetail_info_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,4 +53,4 @@
         app:backgroundTint="@color/colorTransparent"
         app:elevation="0dp"/>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

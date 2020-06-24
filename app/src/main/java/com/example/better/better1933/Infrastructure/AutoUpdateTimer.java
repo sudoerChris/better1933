@@ -1,7 +1,8 @@
 package com.example.better.better1933.Infrastructure;
 
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 public class AutoUpdateTimer extends AsyncTask<Void,Void,Void> {
 	public interface IAutoUpdateTimerUpdate {

@@ -76,7 +76,7 @@ public class KMBDBAutoUpdate extends AsyncTask<Void, Void, String[]> {
 		JsonObject jsonObj = null;
 		while (!success && retry < 5) {
 			try {
-				jsonObj = readJsonFromUrl("http://m.kmb.hk/kmb-ws/checkupdateapp.php?version=1.0.9&lastupdate=" + urlLastUpdate, 1000);
+				jsonObj = readJsonFromUrl("https://m.kmb.hk/kmb-ws/checkupdateapp.php?version=1.6.3&lastupdate=" + urlLastUpdate, 1000);
 				success = true;
 			} catch (IOException ioe) {
 				retry++;

@@ -10,3 +10,4 @@
 /app/release/
 /app/debug/
 /app/build/
+*.jks
